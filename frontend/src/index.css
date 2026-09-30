@@ -1,0 +1,113 @@
+@import "tailwindcss";
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 0;
+}
+
+/* underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: currentColor;
+  border-radius: 999px;
+
+  transform: translateX(-50%);
+
+  transition:
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* hover animation */
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* active page */
+.nav-link-active::after {
+  width: 100%;
+}
+
+/* Sale */
+.nav-sale::after {
+  background: #f97316;
+}
+.nav-admin::after {
+  background: #ef4444;
+}
+@keyframes floatOne {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(35px, -25px, 0);
+  }
+}
+
+@keyframes floatTwo {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-30px, 25px, 0);
+  }
+}
+
+@keyframes particleFloat {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: translateY(-30px) scale(1.5);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 35px rgba(168, 85, 247, 0.25);
+  }
+
+  50% {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 60px rgba(236, 72, 153, 0.4);
+  }
+}
+
+@keyframes loadingShine {
+  from {
+    transform: translateX(-100px);
+  }
+
+  to {
+    transform: translateX(450px);
+  }
+}
